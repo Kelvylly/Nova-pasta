@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            background: black;
+            color: aliceblue;
+        }
+        main{
+            background: rgb(255, 255, 255);color: black;
+            max-height: 800px;
+            max-width: 168px;
+        }
+        #calculo{
+            background: gray;
+            width: 168px;
+            display: flex;
+
+        }
+        .num{
+            margin: 0;
+            background: gray;
+            max-width:50px ;
+            height: 20px;
+            border: 0;
+        }
+        #sinal{
+            margin: 0;
+            background: gray;
+            max-width: 20px;
+            height: 20px;
+            border: 0;
+        }
+
+        #caracter{
+            max-height: 400px;
+            max-width: 100px;
+        }
+        
+        aside{
+            width: 100px;
+            display: flex;
+
+        }
+        #numb{
+            display: block;
+        }
+        
+        .numsin{
+            height: 30px;
+            width: 30px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <main>
+        <div id="calculo">
+            <input type="number" id="num1" class="num">
+            <input type="text" id="sinal">
+            <input type="number" id="num2" class="num">
+            <input type="button" value="=" onclick="calcular()">
+        </div>
+        <div id="caracter">
+            <div id="numb">
+                <input type="button" value="1" onclick="num('1')" class="numsin">
+                <input type="button" value="2" onclick="num('2')" class="numsin">
+                <input type="button" value="3" onclick="num('3')" class="numsin">
+                <input type="button" value="4" onclick="num('4')" class="numsin">
+                <input type="button" value="5" onclick="num('5')" class="numsin">
+                <input type="button" value="6" onclick="num('6')" class="numsin">
+                <input type="button" value="7" onclick="num('7')" class="numsin">
+                <input type="button" value="8" onclick="num('8')" class="numsin">
+                <input type="button" value="9" onclick="num('9')" class="numsin">
+            </div>
+            <aside>
+                <input type="button" value="-" onclick="setOperacao('-')" class="numsin">
+                <input type="button" value="+" onclick="setOperacao('+')" class="numsin">
+                <input type="button" value="÷" onclick="setOperacao('/')" class="numsin">
+                <input type="button" value="x" onclick="setOperacao('*')" class="numsin">
+                
+            </aside>
+        </div>
+        <div id="resultado">
+            <!-- Result will be displayed here -->
+        </main>
+        <script>
+            function calcular() {
+                var num1 = parseFloat(document.getElementById("num1").value);
+                var num2 = parseFloat(document.getElementById("num2").value);
+                var sinal = document.getElementById("sinal").value;
+                var resultado;
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    document.getElementById("resultado").innerHTML = "Por favor, insira números válidos.";
+                    return;
+                }
+
+                switch (sinal) {
+                    case '+':
+                        resultado = num1 + num2;
+                        break;
+                    case '-':
+                        resultado = num1 - num2;
+                        break;
+                    case '*':
+                        resultado = num1 * num2;
+                        break;
+                    case '/':
+                            resultado = num1 / num2;
+                    case '*':
+                        resultado = num1 * num2;
+                        break;
+                    case '/':
+                            resultado = num1 / num2;
+                        
+                    default:
+                }
+
+                document.getElementById("resultado").innerHTML = `Resultado: ${resultado}`;
+            }
+
+            function setOperacao(operacao) {
+               
+
+                document.getElementById("sinal").value = operacao;
+            }
+            function num(operacao) {
+                document.getElementById("num1").value = operacao;
+                document.getElementById("num2").value = operacao;
+
+            }
+        </script>
+    </div>
+</body>
+</html>

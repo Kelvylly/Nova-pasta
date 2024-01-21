@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    background: black;
+
+}
+main{
+    background: whitesmoke;
+    margin: auto;
+    width: 800px;
+    height: 800px;
+}
+header{
+    background: rgb(130, 193, 252);
+    height: 100px;
+    width: 800px;
+
+}
+h1{
+    padding: 30px;
+   text-align:center;
+}
+div{
+   padding: 30px;
+  flex-wrap: wrap;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+
+}
+
+.linguagens{
+    padding: 0 20px;
+    width: 50px;
+    height: 50px;
+    gap: 30px;
+}
